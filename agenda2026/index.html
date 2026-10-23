@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#071c35">
+  <meta name="description" content="Интерактивная программа AIESEC Alumni Congress: 23–25 октября. Все сессии, мастер-классы, площадки и личное расписание.">
+  <title>Программа конгресса · AIESEC Alumni</title>
+  <style>
+/* AIESEC Alumni Congress — legible, accessible redesign, Oct 2026 */
+:root{
+  --base:#f3f6fa;--paper:#fff;--ink:#142a43;--muted:#52647a;
+  --faint:#6e7f92;--stroke:#dbe4ed;--navy:#092641;--navy2:#0d3555;
+  --coral:#f07152;--coral-d:#c64b32;--blue:#1875a3;
+  --lime:#f07152;--sky:#1875a3;--violet:#7750ad;--orange:#de713f;
+  --round:16px;--max:1350px;color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--base);font-family:"Segoe UI", "Helvetica Neue", Arial, sans-serif;font-size:16px;font-weight:400;line-height:1.55;letter-spacing:0;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body::before{display:none}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+button{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[role=button]:focus-visible{outline:3px solid #f07152;outline-offset:3px}
+.shell{max-width:var(--max);margin-inline:auto;padding-inline:36px}
+.muted{color:var(--muted)}
+.masthead{color:#fff;background:linear-gradient(128deg,#071f36 0%,#0b3152 70%,#124465 100%);position:relative;isolation:isolate;overflow:hidden}
+.masthead::after{content:"";position:absolute;right:-110px;top:-175px;width:780px;height:780px;border:1px solid #ffffff12;border-radius:50%;z-index:-1;box-shadow:0 0 0 100px #ffffff04,0 0 0 202px #ffffff03;pointer-events:none}
+.topbar{min-height:77px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid #ffffff2a}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-emblem{display:grid;place-items:center;flex:none;width:44px;height:44px;background:#fff;color:var(--navy);border-radius:12px;transform:rotate(-5deg)}
+.brand-emblem svg{width:28px;height:28px;transform:rotate(5deg)}
+.brand-emblem svg path{stroke:#092641}
+.brand-main,.brand-sub{display:block}
+.brand-main{font-size:17px;letter-spacing:-.02em;font-weight:800;line-height:1.1}
+.brand-main span{color:#ff9b81}
+.brand-sub{margin-top:5px;color:#b7ccdf;letter-spacing:.14em;font-size:11px;font-weight:600}
+.toplinks{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600;color:#d9e5f1}
+.toplinks a:hover{color:#ffa48c}
+.mini-button{display:flex;align-items:center;gap:9px;white-space:nowrap;color:#fff;background:#ffffff12;border:1px solid #ffffff45;border-radius:11px;padding:10px 14px;font-size:14px;font-weight:650}
+.mini-button:hover{background:#ffffff26}.mini-button svg{width:18px;height:18px}
+#headerCount{display:inline-grid;place-items:center;border-radius:6px;background:#fff;color:var(--navy);min-width:22px;height:22px;font-size:12px;font-weight:700}
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 295px;align-items:center;gap:44px;min-height:418px;padding-block:65px 76px}
+.overline{display:flex;align-items:center;gap:10px;color:#ffa68c;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.overline::before{content:"";width:24px;height:2px;background:currentColor}
+h1{font-size:clamp(48px,5.6vw,78px);font-weight:800;letter-spacing:-.038em;line-height:1.08;max-width:900px;margin:19px 0 19px}
+h1 em{color:#ff9d81;font-style:normal}
+.hero-desc{font-size:clamp(18px,2vw,23px);font-weight:700;line-height:1.34;max-width:720px;margin:0;color:#fff;letter-spacing:0}
+.hero-desc-sub{display:inline-block;color:#bfd0df;font-size:16px;font-weight:400;line-height:1.65;margin-top:13px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.hero-pill{padding:8px 13px;border:1px solid #ffffff4a;border-radius:8px;color:#dce9f5;font-size:13px;font-weight:650;letter-spacing:0;background:#ffffff0e}
+.hero-pill.key{background:var(--coral);border-color:var(--coral);color:#112439}
+.orbit{width:270px;height:270px;position:relative;isolation:isolate;margin:auto}
+.orbit::before{content:"";position:absolute;inset:23px;border-radius:50%;background:radial-gradient(circle at 35% 32%,#568ab89d,#143d639b 60%,#0a243c 80%);box-shadow:inset 0 0 60px #90bce019,0 0 52px #0001}
+.orbit-ring{position:absolute;inset:0;border:1px solid #91bddb66;border-radius:50%;transform:rotate(-26deg)}
+.orbit-ring.two{inset:25px -6px;transform:rotate(42deg)}
+.orbit-ring.three{inset:56px;border:1px dashed #ffffff48}
+.orb{position:absolute;z-index:2;border-radius:50%}
+.orb.one{width:29px;height:29px;right:35px;top:37px;background:#ff9273;box-shadow:0 0 32px #f59c7699}
+.orb.two{width:13px;height:13px;left:24px;bottom:43px;background:#b1daee}
+.orb.three{width:9px;height:9px;left:17px;top:59px;background:#fff}
+.orbit-center{position:absolute;inset:0;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center}
+.orbit-center b{font-size:65px;color:#fff;line-height:1;font-weight:800;letter-spacing:-.06em}
+.orbit-center span{margin-top:9px;font-size:11px;letter-spacing:.2em;color:#d9ebf5;font-weight:650}
+.orbit-path{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.schedule-wrap{padding-top:54px;padding-bottom:100px}
+#schedule{scroll-margin-top:22px}
+.section-intro{display:flex;gap:30px;align-items:end;justify-content:space-between;margin-bottom:23px}
+.eyebrow{font-size:12px;font-weight:750;letter-spacing:.08em;color:var(--coral-d);text-transform:uppercase}
+.section-title{font-size:clamp(29px,3.2vw,41px);line-height:1.16;letter-spacing:-.025em;margin:7px 0 0;font-weight:750}
+.section-caption{margin:0;max-width:345px;text-align:right;font-size:14px;line-height:1.5;color:var(--muted)}
+.nav-panel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:9px;background:#e6edf5;border:1px solid #d6e0eb;border-radius:17px}
+.day-tab{min-width:0;border:1px solid transparent;background:transparent;color:#344b66;border-radius:12px;padding:16px 22px;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .16s,border-color .16s}
+.day-tab:hover{background:#f6f8fc}
+.day-tab[aria-selected=true]{background:#fff;border-color:#d4dee9;color:var(--navy);box-shadow:0 3px 10px #173d5e14}
+.day-tab[aria-selected=true] .day-date{color:var(--coral-d)}
+.day-name{display:block;font-size:16px;font-weight:750;line-height:1.15}
+.day-desc{display:block;margin-top:5px;color:#5c6e81;font-size:13px;font-weight:400}
+.day-date{font-size:37px;font-weight:780;line-height:1;letter-spacing:-.04em}
+.utility{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:24px 0 15px}
+.searchbox{display:flex;align-items:center;gap:10px;flex:1 1 270px;max-width:420px;min-width:180px;height:46px;background:#fff;color:var(--ink);border:1px solid #cbd8e4;border-radius:10px;padding:0 14px}
+.searchbox:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px #1875a31c}
+.searchbox svg{width:19px;height:19px;color:#6b7d91;flex:none}
+.searchbox input{width:100%;border:0;outline:0;background:transparent;color:var(--ink);font-size:15px}
+.searchbox input::placeholder{color:#64758a}
+.utility-button{min-height:46px;display:flex;align-items:center;justify-content:center;gap:8px;padding:0 14px;background:#fff;color:#2c445d;border:1px solid #ccd9e5;border-radius:10px;font-size:14px;font-weight:650;white-space:nowrap}
+.utility-button:hover,.utility-button.selected{border-color:var(--blue);color:#075f88;background:#ecf7fc}
+.utility-button svg{width:18px;height:18px;flex:none}
+.utility-button .counter{padding:2px 7px;border-radius:6px;color:#fff;background:var(--navy);font-size:12px}
+.select-button select{max-width:170px;background:transparent;border:0;outline:0;color:inherit;font-size:14px;font-weight:650;cursor:pointer}
+.select-button select option{background:#fff;color:var(--ink)}
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-bottom:21px;border-bottom:1px solid var(--stroke)}
+.filter-chip{min-height:36px;padding:7px 13px;border:1px solid #d2dde7;background:#fff;color:#435a70;border-radius:8px;font-size:13px;font-weight:600}
+.filter-chip:hover{border-color:#7392a8;color:var(--navy)}
+.filter-chip.active{background:var(--navy);border-color:var(--navy);color:#fff}
+.day-heading{display:flex;align-items:baseline;justify-content:space-between;gap:22px;margin:27px 0 22px}
+.day-heading h2{margin:0;font-size:28px;line-height:1.25;font-weight:750;letter-spacing:-.02em}
+.day-heading p{margin:0;font-size:14px;color:var(--muted);text-align:right}
+.segment-label{margin:27px 0 12px;display:flex;align-items:center;gap:14px;color:#ae4e36;font-size:13px;font-weight:780;letter-spacing:.045em;text-transform:uppercase}
+.segment-label::after{content:"";height:1px;flex:1;background:#d9e3eb}
+.timeline{position:relative;display:flex;flex-direction:column;gap:9px}
+.timeline::before{content:"";position:absolute;left:85px;top:8px;bottom:9px;width:2px;background:#dae3ec}
+.session-row{position:relative;min-height:84px;display:grid;grid-template-columns:93px minmax(0,1fr);gap:22px;align-items:stretch}
+.session-row::before{content:"";position:absolute;left:80px;top:25px;width:11px;height:11px;border:2px solid var(--blue);border-radius:50%;background:var(--base);z-index:1}
+.session-row.is-muted::before{border-color:#9aaabd}
+.time{position:relative;z-index:1;padding-top:18px;font-variant-numeric:tabular-nums}
+.time strong{display:block;color:var(--ink);font-size:16px;font-weight:750;letter-spacing:0;line-height:1.35}
+.time span{display:block;font-size:13px;color:#65758a;margin-top:3px}
+.event-card{--accent:var(--blue);display:flex;align-items:flex-start;gap:12px;text-align:left;position:relative;min-width:0;width:100%;padding:15px 19px 16px 22px;background:#fff;color:var(--ink);border:1px solid #d7e1ea;border-radius:13px;box-shadow:0 2px 8px #153e5810;cursor:pointer;transition:box-shadow .15s,border-color .15s,transform .15s}
+.event-card:hover{border-color:#9fbacd;box-shadow:0 7px 20px #12375116;transform:translateY(-1px)}
+.event-card::before{content:"";position:absolute;left:0;top:13px;bottom:13px;width:4px;border-radius:0 3px 3px 0;background:var(--accent)}
+.event-card.type-social{--accent:#8264af;background:#fcfbff}
+.event-card.type-workshop{--accent:#d36649}
+.event-card.type-formal{--accent:var(--blue)}
+.event-card.type-logistics{--accent:#96a8b9;background:#fbfcfe}
+.event-card.type-break{--accent:#96a8b9;background:#f9fbfd}
+.event-card.type-highlight{--accent:var(--coral);background:#fffaf7;border-color:#efd8d1}
+.event-content{flex:1;min-width:0}
+.event-kicker{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 6px;color:#567089;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.035em}
+.event-card.type-highlight .event-kicker{color:#ad4d37}
+.event-content h3{font-size:18px;line-height:1.38;font-weight:720;letter-spacing:0;margin:0;color:#102841;overflow-wrap:anywhere}
+.event-people{margin:7px 0 0;font-size:14px;line-height:1.52;color:#4f6074}
+.location-label{display:inline-flex;align-items:center;gap:5px;margin:10px 0 0;padding:4px 9px;border-radius:6px;border:1px solid #dae6f0;background:#eef5fb;color:#285570;font-size:12px;font-weight:650}
+.location-label svg{width:14px;height:14px;flex:none}
+.save{position:relative;z-index:2;display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:9px;background:transparent;color:#71859b;border:1px solid transparent}
+.save:hover{background:#edf4fa;color:var(--blue)}
+.save.active{color:var(--coral-d);background:#ffebe4}
+.save svg{width:21px;height:21px}.save.active svg{fill:currentColor}
+.workshop-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:45px 0 18px}
+.workshop-head h3{font-size:29px;line-height:1.18;letter-spacing:-.015em;font-weight:750;margin:4px 0 0}
+.workshop-head p{font-size:14px;color:var(--muted);margin:7px 0 0}
+.room-key{font-size:13px;color:#53687b;font-weight:600;display:flex;align-items:center;gap:7px;white-space:nowrap}
+.room-key .dot{width:9px;height:9px;border-radius:50%;display:inline-block;background:var(--coral)}
+.board-scroll{overflow-x:auto;padding:1px 0 12px;scrollbar-color:#adc0cd #eef2f6}
+.board{min-width:1240px;background:#fff;border:1px solid #cbdce8;border-radius:14px;overflow:hidden}
+.board-heading{height:75px;display:grid;grid-template-columns:82px repeat(5,minmax(0,1fr));background:#103451;color:#fff;border-bottom:1px solid #d3e2ec}
+.board-h-cell{padding:13px 12px;display:flex;flex-direction:column;justify-content:center;gap:4px;border-left:1px solid #ffffff28;font-size:14px;font-weight:750;line-height:1.3}
+.board-h-cell:first-child{border-left:0;font-size:11px;letter-spacing:.06em;color:#c4dbea}
+.board-h-cell small{font-size:12px;color:#c6dbe8;font-weight:400}
+.board-body{position:relative;display:grid;grid-template-columns:82px repeat(5,minmax(0,1fr));grid-template-rows:repeat(9,145px)}
+.board-times{position:relative;z-index:1;grid-column:1;grid-row:1/span 9;display:grid;grid-template-rows:repeat(9,145px);background:#e8f0f6;border-right:1px solid #d0dfe9}
+.board-time{padding:14px 10px 0;border-bottom:1px solid #cfdee8;color:#26425d;font-size:14px;line-height:1.35;font-weight:750;font-variant-numeric:tabular-nums}
+.board-time small{display:block;color:#73869a;font-size:11px;font-weight:400;margin-top:4px}
+.board-lines{position:absolute;z-index:0;left:82px;right:0;top:0;bottom:0;pointer-events:none;background:repeating-linear-gradient(to bottom,transparent 0,transparent 144px,#d9e4ec 144px,#d9e4ec 145px)}
+.board-track-line{position:absolute;z-index:0;top:0;bottom:0;width:1px;background:#d9e4ec;pointer-events:none}
+.board-event{min-width:0;margin:5px;z-index:2;position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:11px 11px 9px;text-align:left;background:#fff;color:#132d46;border:1px solid #cfdce6;border-top:4px solid var(--room);border-radius:9px;box-shadow:0 1px 4px #12375113;transition:border-color .16s,box-shadow .16s}
+.board-event:hover{border-color:#517b9b;border-top-color:var(--room);box-shadow:0 4px 15px #12375128}
+.board-type{color:#446680;font-size:12px;font-weight:700;line-height:1.3}
+.board-event strong{display:block;font-size:14px;font-weight:720;line-height:1.32;color:#102841;letter-spacing:0;overflow-wrap:anywhere}
+.board-event .board-by{font-size:12px;line-height:1.3;color:#4d6173;overflow-wrap:anywhere}
+.board-event .board-where{font-size:11px;font-weight:750;color:#36617f;margin-top:auto;line-height:1.25}
+.board-star{position:absolute;right:8px;top:6px;font-size:16px;color:var(--coral-d)}
+.board-rest{z-index:1;display:flex;align-items:center;justify-content:center;margin:5px;background:#f0f5f9;border:1px dashed #b6c8d8;border-radius:8px;color:#50647a;font-size:12px;font-weight:650}
+.board-caption{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 6px}
+.board-caption span{display:inline-flex;align-items:center;gap:6px;color:#56687d;font-size:12px}
+.board-caption i{display:block;width:10px;height:10px;border-radius:50%}
+.mobile-workshops{display:none}
+.empty{margin:26px 0;padding:38px 22px;border:1px dashed #b6c8d8;border-radius:12px;background:#fff;color:var(--muted);text-align:center}
+.empty strong{display:block;font-size:19px;color:var(--ink);margin-bottom:5px}
+.empty button{margin-top:15px;padding:10px 16px;border:0;border-radius:8px;background:var(--navy);color:white;font-weight:650}
+.footer{display:flex;justify-content:space-between;align-items:start;gap:24px;padding-top:26px;padding-bottom:44px;border-top:1px solid #d7e1ea;color:#52677b;font-size:12px}
+.footer strong{display:block;color:var(--navy);font-size:15px;margin-bottom:3px}
+.footer-note{max-width:610px;text-align:right;line-height:1.55}
+.modal-shell{position:fixed;inset:0;display:none;place-items:center;padding:18px;background:#081b30bb;z-index:50;backdrop-filter:blur(5px)}
+.modal-shell.open{display:grid}
+.dialog{position:relative;width:min(100%,560px);max-height:calc(100vh - 36px);overflow-y:auto;padding:35px;background:#fff;border:1px solid #dee7ef;border-radius:18px;box-shadow:0 25px 80px #0a233e66;animation:appear .2s ease-out}
+.close{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:38px;height:38px;border-radius:9px;border:1px solid #d5e1eb;background:#f5f8fb;color:var(--ink);font-size:23px;line-height:1}
+.dialog-kicker{color:#b64c31;font-size:12px;font-weight:750;letter-spacing:.045em;text-transform:uppercase;margin-bottom:15px;padding-right:35px}
+.dialog h2{font-size:clamp(24px,4vw,32px);line-height:1.22;font-weight:750;letter-spacing:-.02em;color:#142a43;margin:0 0 22px;padding-right:15px;overflow-wrap:anywhere}
+.dialog-details{display:flex;flex-direction:column;gap:13px;margin-bottom:24px}
+.dialog-detail{display:flex;align-items:flex-start;gap:11px;color:#3d5268;font-size:15px;line-height:1.55}
+.dialog-detail svg{width:18px;height:18px;flex:none;color:var(--blue);margin-top:2px}
+.dialog-actions{display:flex;flex-wrap:wrap;gap:10px}
+.primary-btn,.secondary-btn{min-height:45px;padding:11px 16px;border-radius:9px;font-size:14px;font-weight:700}
+.primary-btn{color:#fff;background:#0e4265;border:1px solid #0e4265}
+.secondary-btn{color:#0d4264;background:#fff;border:1px solid #aec8d9}
+.dialog-foot{margin:22px 0 0;color:#64778b;font-size:12px}
+.toast{position:fixed;bottom:22px;left:50%;z-index:75;transform:translate(-50%,25px);opacity:0;pointer-events:none;background:#0b3555;color:#fff;padding:11px 18px;border-radius:9px;box-shadow:0 12px 32px #0004;font-size:14px;font-weight:600;transition:opacity .2s,transform .2s;white-space:nowrap;max-width:calc(100% - 30px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@keyframes appear{from{transform:translateY(10px);opacity:0}to{transform:translateY(0);opacity:1}}
+@media(max-width:1250px){.board-scroll,.board-caption{display:none}.mobile-workshops{display:block}}
+@media(max-width:950px){.hero{grid-template-columns:1fr 210px;gap:15px}.orbit{width:208px;height:208px}.orbit-center b{font-size:50px}.toplinks{gap:15px}.section-caption{max-width:260px}}
+@media(max-width:760px){
+  .shell{padding-inline:20px}.topbar{min-height:70px}.toplinks{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto;padding-block:47px 55px}
+  .hero h1{font-size:clamp(42px,8.8vw,62px);margin:19px 0 18px}
+  .hero-desc{font-size:19px}.hero-desc-sub{font-size:15px}.orbit{display:none}
+  .schedule-wrap{padding-top:36px;padding-bottom:64px}
+  .section-intro{margin-bottom:19px}.section-caption{display:none}.section-title{font-size:30px}
+  .nav-panel{gap:5px;padding:5px}.day-tab{padding:13px 10px;display:block}.day-date{font-size:29px;margin-top:10px}.day-desc{font-size:11px}.day-name{font-size:13px}
+  .utility{padding-top:16px}.searchbox{flex-basis:100%;max-width:none}.filter-chip{font-size:12px;padding:7px 10px}
+  .day-heading{flex-direction:column;align-items:start;gap:5px}.day-heading h2{font-size:24px}.day-heading p{text-align:left;font-size:13px}
+  .timeline::before{left:69px}.session-row{grid-template-columns:75px minmax(0,1fr);gap:12px}.session-row::before{left:64px;top:23px}
+  .time{padding-top:17px}.time strong{font-size:14px}.time span{font-size:12px}
+  .event-card{padding:14px 11px 15px 16px;gap:6px;border-radius:11px}
+  .event-content h3{font-size:16px;line-height:1.4}.event-kicker{font-size:11px;gap:6px;letter-spacing:0}
+  .event-people{font-size:13px;line-height:1.45}.save{width:33px;height:33px}.save svg{width:20px;height:20px}
+  .workshop-head{margin-top:34px;flex-direction:column;align-items:start}.workshop-head h3{font-size:24px}
+  .footer{flex-direction:column;gap:15px}.footer-note{text-align:left}.dialog{padding:30px 20px}
+  .mini-button{padding:9px}.mini-button .btn-word{display:none}
+}
+@media(max-width:400px){.shell{padding-inline:13px}.day-tab{padding:11px 7px}.day-date{font-size:26px}.day-name{font-size:12px}.day-desc{font-size:10px}.session-row{grid-template-columns:68px minmax(0,1fr);gap:10px}.session-row::before{left:60px}.timeline::before{left:65px}.event-content h3{font-size:16px}.event-kicker{font-size:11px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+@media print{
+  :root{color-scheme:light}body{background:#fff;color:#182d42}.masthead{background:#fff!important;color:#182d42}
+  .topbar,.orbit,.hero-meta,.utility,.filters,.footer,.save,.nav-panel,.modal-shell,.toast{display:none!important}
+  .hero{min-height:0;display:block;padding:15px 0 8px}.hero h1{font-size:32px}.hero h1 em{color:#182d42}
+  .hero-desc,.hero-desc-sub{color:#344f64}.shell{max-width:100%;padding-inline:12px}
+  .schedule-wrap{padding-top:8px;padding-bottom:0}.event-card{box-shadow:none;break-inside:avoid;border-color:#ccd8e1}
+  .timeline::before,.session-row::before{display:none}.session-row{grid-template-columns:86px 1fr;gap:11px}
+  .board-scroll{display:none}.mobile-workshops{display:block}.event-card,.board-event{background:#fff!important;color:#182d42!important}
+  .overline,.section-title,.event-content h3,.time strong{color:#182d42}
+}
+</style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute"><defs>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16.5 16.5 5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.8 2.83 5.73 6.32.92-4.57 4.45 1.08 6.29L12 17.22 6.34 20.2l1.08-6.3-4.57-4.45 6.32-.92L12 2.8z" stroke="currentColor" fill="none" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 6.5V12l3.5 2" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" stroke-width="1.7" fill="none"/><circle cx="12" cy="10" r="2.7" stroke="currentColor" stroke-width="1.7" fill="none"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.7" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M4.5 21c.3-4.4 3.1-6.3 7.5-6.3s7.2 1.9 7.5 6.3" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.7" fill="none"/><path d="M7 2v6m10-6v6M3 11h18" stroke="currentColor" stroke-width="1.7" fill="none"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-7-7 7 7-7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs></svg>
+  <div class="masthead" id="top">
+  <header class="shell topbar">
+    <a class="brand" href="#top" aria-label="Наверх, AIESEC Alumni Congress"><span class="brand-emblem"><svg viewBox="0 0 28 28" fill="none"><path d="M6 20 14 5l8 15M9.5 14h9" stroke="#092641" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><span class="brand-main">AIESEC <span>Alumni</span></span><span class="brand-sub">CONGRESS / 2026</span></span></a>
+    <nav class="toplinks" aria-label="Основная навигация"><a href="#schedule">Программа</a><a href="#workshop-anchor" id="workshopLink">Мастер-классы</a><a href="#footer">О программе</a></nav>
+    <button class="mini-button" id="topFav" type="button" aria-label="Показать избранные события"><svg><use href="#i-star"/></svg><span class="btn-word">Мой маршрут</span><span id="headerCount">0</span></button>
+  </header>
+    <section class="shell hero" aria-labelledby="hero-title"><div class="hero-copy"><div class="overline">AIESEC ALUMNI CONGRESS • OCTOBER 2026</div><h1 id="hero-title">ПРОГРАММА<br><em>КОНГРЕССА</em></h1><p class="hero-desc">СРЕДИ СВОИХ РОЖДАЮТСЯ НОВЫЕ ИСТОРИИ<br><span class="hero-desc-sub">Три дня встреч, выступлений, мастер-классов и незабываемых вечеров</span></p><div class="hero-meta"><span class="hero-pill key">23 — 25 октября</span><span class="hero-pill">Пт / Сб / Вс</span><span class="hero-pill">3 дня вместе</span></div></div>
+      <div class="orbit" aria-hidden="true"><div class="orbit-ring"></div><div class="orbit-ring two"></div><div class="orbit-ring three"></div><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div><div class="orbit-center"><b>2026</b><span>TOGETHER</span></div><svg class="orbit-path" viewBox="0 0 330 330"><path d="M19 159C77 282 261 284 318 154" stroke="#ddf98f" stroke-opacity=".5" stroke-width="1" stroke-dasharray="4 8" fill="none"/><circle cx="290" cy="227" r="4" fill="#f7c6a8"/></svg></div>
+    </section>
+  </div>
+  <main>
+    <section class="shell schedule-wrap" id="schedule" aria-labelledby="schedule-title">
+      <div class="section-intro"><div><div class="eyebrow">01 / YOUR EXPERIENCE</div><h2 class="section-title" id="schedule-title">Выбирайте свой ритм</h2></div><p class="section-caption">Исследуйте программу, находите интересные выступления и собирайте личный маршрут.</p></div>
+      <div class="nav-panel" role="tablist" aria-label="Выбор дня">
+        <button type="button" class="day-tab" data-day="fri" role="tab" aria-selected="false"><span><span class="day-name">Пятница</span><span class="day-desc">Встречаемся</span></span><span class="day-date">23</span></button>
+        <button type="button" class="day-tab" data-day="sat" role="tab" aria-selected="true"><span><span class="day-name">Суббота</span><span class="day-desc">Главный день</span></span><span class="day-date">24</span></button>
+        <button type="button" class="day-tab" data-day="sun" role="tab" aria-selected="false"><span><span class="day-name">Воскресенье</span><span class="day-desc">До новых встреч</span></span><span class="day-date">25</span></button>
+      </div>
+      <div class="utility"><label class="searchbox" aria-label="Поиск по программе"><svg><use href="#i-search"/></svg><input id="search" type="search" placeholder="Найти тему или спикера…" autocomplete="off" spellcheck="false"/></label><button id="onlyFav" class="utility-button" type="button"><svg><use href="#i-star"/></svg>Избранное <span class="counter" id="favCount">0</span></button><button id="exportFav" class="utility-button" type="button" title="Скачать избранные события в календарь"><svg><use href="#i-calendar"/></svg><span>В календарь</span></button><button id="printBtn" class="utility-button" type="button" title="Распечатать выбранный день">↗ &nbsp;Печать</button></div>
+      <div class="filters" role="group" aria-label="Фильтр по типу события"><button class="filter-chip active" data-type="all" type="button">Вся программа</button><button class="filter-chip" data-type="formal" type="button">Выступления</button><button class="filter-chip" data-type="workshop" type="button">Мастер-классы</button><button class="filter-chip" data-type="social" type="button">Общение и вечеринки</button><button class="filter-chip" data-type="logistics" type="button">Перерывы и отдых</button><label class="utility-button select-button" id="roomSelector" style="display:none" title="Фильтр по площадке"><svg style="width:15px;height:15px;flex:none"><use href="#i-pin"/></svg><select id="roomFilter" aria-label="Выбрать площадку"><option value="all">Любая площадка</option><option value="1 зал">1 зал</option><option value="3 зал">3 зал</option><option value="5 зал">5 зал</option><option value="Наше лобби">Наше лобби</option><option value="Аквацентр">Аквацентр</option><option value="Корпус «Лесной»">Корпус «Лесной»</option><option value="Ресторан «Парус»">Ресторан «Парус»</option></select></label></div>
+      <div id="dayContent" role="tabpanel" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer id="footer" class="shell footer"><div><strong>AIESEC Alumni Congress</strong><div>23–25 октября · Программа для участников</div></div><div class="footer-note">Программа перенесена из предоставленного PDF. Время указано в формате организаторов; год 2026 определён по соответствию дат дням недели. Время и площадки могут уточняться организаторами.</div></footer>
+  <div id="modal" class="modal-shell" role="presentation"><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button id="modalClose" type="button" class="close" aria-label="Закрыть">×</button><div id="modalKicker" class="dialog-kicker"></div><h2 id="modalTitle"></h2><div id="modalDetails" class="dialog-details"></div><div class="dialog-actions"><button id="modalFav" type="button" class="primary-btn"></button><button id="modalICS" type="button" class="secondary-btn">Добавить в календарь ↗</button></div><p class="dialog-foot">Сохранённые события остаются в этом браузере. Экспорт создаёт календарный файл .ics.</p></section></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+  'use strict';
+  /* Данные аккуратно перенесены с двух страниц исходной программы. Площадки указаны только там, где они подписаны в оригинале. */
+  const events = [
+    // Пятница
+    {id:'f01',day:'fri',start:'18:00',end:'19:30',name:'Прибытие на площадку, заселение, ужин',type:'logistics'},
+    {id:'f02',day:'fri',start:'19:30',end:'20:30',name:'Opening',type:'formal'},
+    {id:'f03',day:'fri',start:'20:30',end:'21:30',name:'Networking Квест',type:'social'},
+    {id:'f04',day:'fri',start:'21:30',end:'22:30',name:'Fuck Up Night',people:'Дмитрий Васильев, Елена Дагер, Андрей Ильдеменов, Кирилл Мельчаков',type:'social'},
+    {id:'f05',day:'fri',start:'22:30',end:'23:00',name:'DRESS-UP',type:'logistics'},
+    {id:'f06',day:'fri',start:'23:00',end:'02:30',name:'Space Party',note:'Тематическая вечеринка + настолки, шашлыки, рум-пати',type:'social',special:true},
+    // Суббота: общая программа
+    {id:'s01',day:'sat',start:'08:00',end:'09:00',name:'Спортивное утро',type:'logistics'},
+    {id:'s02',day:'sat',start:'09:00',end:'10:00',name:'Завтрак',type:'logistics'},
+    {id:'s03',day:'sat',start:'10:00',end:'11:00',name:'Открытие дня',type:'formal'},
+    {id:'s04',day:'sat',start:'11:00',end:'12:30',name:'КОНТЕКСТ: панельная дискуссия + Q&A',people:'Элина Куэста — модератор; Николай Цехомский, Кирилл Петров, Татьяна Конева, Игорь Колынин, Илья Кретов — спикеры',type:'formal',special:true},
+    {id:'s05',day:'sat',start:'12:30',end:'13:00',name:'Перерыв',type:'logistics'},
+    {id:'s06',day:'sat',start:'13:00',end:'13:30',name:'AIESEC in Russia: NOW',people:'Евгения Полетаева (MCP current)',type:'formal'},
+    {id:'s07',day:'sat',start:'13:30',end:'14:00',name:'AIESEC ALUMNI: LEAD THE COMMUNITY',people:'Кристина Удалова',type:'formal'},
+    {id:'s08',day:'sat',start:'14:00',end:'15:00',name:'Обед',type:'logistics'},
+    // Суббота: мастер-классы. lane 0 = 3 зал, 1 = 1 зал, 2 = 5 зал / аквацентр, 3 = лобби, 4 = Лесной / Парус.
+    {id:'w01',day:'sat',start:'15:00',end:'16:30',name:'Бизнес-решения в эпоху перемен',people:'А. Акимова — модератор; С. Карпенко, А. Яралиев, П. Кувшинов — спикеры',type:'workshop',room:'3 зал',lane:0},
+    {id:'w02',day:'sat',start:'15:00',end:'16:30',name:'Воспитание детей в современном мире',people:'Мария Сосина',type:'workshop',room:'1 зал',lane:1},
+    {id:'w03',day:'sat',start:'15:00',end:'16:00',name:'Чем живёт Аламни-сообщество?',people:'Кристина Удалова',type:'workshop',room:'5 зал',lane:2},
+    {id:'w04',day:'sat',start:'15:00',end:'16:00',name:'Закулисье киноиндустрии и культурные различия',people:'Никита Коваль',type:'workshop',room:'Наше лобби',lane:3},
+    {id:'w05',day:'sat',start:'15:00',end:'16:30',name:'Сексуальность — это не колготки в сеточку',people:'Светлана Железко',type:'workshop',room:'Корпус «Лесной»',lane:4},
+    {id:'w06',day:'sat',start:'16:00',end:'16:30',name:'Путь в бассейн и переодевашки',type:'logistics',room:'Аквацентр',lane:2,workshop:true},
+    {id:'w07',day:'sat',start:'16:00',end:'16:30',name:'Авиация, и всё, что вы не знали о самолётах',people:'Александр Улан',type:'workshop',room:'Наше лобби',lane:3},
+    {id:'wbr1',day:'sat',start:'16:30',end:'17:00',name:'Перерыв между мастер-классами',type:'logistics',workshop:true},
+    {id:'w08',day:'sat',start:'17:00',end:'18:00',name:'Карьерные секреты, космические зарплаты и самоуверенность',people:'Ильгиз Валинуров',type:'workshop',room:'3 зал',lane:0},
+    {id:'w09',day:'sat',start:'17:00',end:'18:00',name:'Как не ждать музу, или Искусство видеть иначе',people:'Дарья Багринцева',type:'workshop',room:'1 зал',lane:1},
+    {id:'w10',day:'sat',start:'17:00',end:'18:00',name:'Честные плюсы и минусы проживания за границей',people:'Юлия Госсельбах, Иван Пирожков',type:'workshop',room:'Аквацентр',lane:2},
+    {id:'w11',day:'sat',start:'17:00',end:'18:00',name:'AI-агент своими руками: теория',people:'Дмитрий Васильев',type:'workshop',room:'Наше лобби',lane:3},
+    {id:'w12',day:'sat',start:'17:00',end:'18:00',name:'Философский аламни-клуб',people:'Матвей Федоров',type:'workshop',room:'Ресторан «Парус»',lane:4},
+    {id:'w13',day:'sat',start:'18:00',end:'18:30',name:'Переодевашки и путь из бассейна',type:'logistics',room:'Аквацентр',lane:2,workshop:true},
+    {id:'wbr2',day:'sat',start:'18:00',end:'18:30',name:'Перерыв между мастер-классами',type:'logistics',workshop:true},
+    {id:'w14',day:'sat',start:'18:30',end:'19:30',name:'Хвост виляет собакой, или Воля в рабстве у зависимости',people:'Виктория Махова, Александра Фрай',type:'workshop',room:'3 зал',lane:0},
+    {id:'w15',day:'sat',start:'18:30',end:'19:30',name:'Как не ждать музу, или Искусство видеть иначе',people:'Дарья Багринцева',type:'workshop',room:'1 зал',lane:1},
+    {id:'w16',day:'sat',start:'18:30',end:'19:30',name:'Зачем ломать то, что работает?',people:'Александр Криволапов',type:'workshop',room:'5 зал',lane:2},
+    {id:'w17',day:'sat',start:'18:30',end:'19:30',name:'AI-агент своими руками: практика',people:'Дмитрий Васильев',type:'workshop',room:'Наше лобби',lane:3},
+    {id:'w18',day:'sat',start:'18:30',end:'19:30',name:'Философский аламни-клуб',people:'Матвей Федоров',type:'workshop',room:'Ресторан «Парус»',lane:4},
+    // Суббота: вечер
+    {id:'s09',day:'sat',start:'19:30',end:'20:30',name:'DRESS-UP & DINNER',type:'logistics'},
+    {id:'s10',day:'sat',start:'20:30',end:'21:00',name:'PHOTO-TIME',type:'social'},
+    {id:'s11',day:'sat',start:'21:00',end:'22:00',name:'GALA NIGHT',type:'social',special:true},
+    {id:'s12',day:'sat',start:'22:00',end:'22:30',name:'DRESS-UP',type:'logistics'},
+    {id:'s13',day:'sat',start:'22:30',end:'02:30',name:'GLOBAL VILLAGE',type:'social',special:true},
+    // Воскресенье
+    {id:'u01',day:'sun',start:'08:00',end:'09:00',name:'Спортивное утро',type:'logistics'},
+    {id:'u02',day:'sun',start:'09:00',end:'10:00',name:'Завтрак',type:'logistics'},
+    {id:'u03',day:'sun',start:'10:00',end:'10:30',name:'Открытие дня',type:'formal'},
+    {id:'u04',day:'sun',start:'10:30',end:'11:30',name:'НОВЫЕ ИСТОРИИ',type:'formal',special:true},
+    {id:'u05',day:'sun',start:'11:30',end:'12:00',name:'Перерыв',type:'logistics'},
+    {id:'u06',day:'sun',start:'12:00',end:'13:30',name:'Closing',type:'formal'},
+    {id:'u07',day:'sun',start:'13:30',end:'15:00',name:'Обед и выезд из отеля до 15:00',type:'logistics'},
+  ];
+  const days={fri:{title:'Пятница',date:'23 октября',description:'Знакомства, открытие и Space Party',intro:'Первые встречи · Welcome evening'},sat:{title:'Суббота',date:'24 октября',description:'Общая программа, параллельные мастер-классы и GALA NIGHT',intro:'Главный день · Knowledge & connections'},sun:{title:'Воскресенье',date:'25 октября',description:'Новые истории и закрытие конгресса',intro:'Финальный день · Until next time'}};
+  const roomColors={'3 зал':'#f5df82','1 зал':'#9beba7','5 зал':'#c2a9ff','Наше лобби':'#ff9c9e','Аквацентр':'#76caff','Корпус «Лесной»':'#ef9bd7','Ресторан «Парус»':'#ffbf83'};
+  const categoryNames={formal:'Выступление',workshop:'Мастер-класс',social:'Общение и вечерняя программа',logistics:'Организационное'};
+  const state={day:'sat',type:'all',room:'all',query:'',onlyFav:false,modal:null};
+  let favorites=[];
+  try{favorites=JSON.parse(localStorage.getItem('aiesec_alumni_congress_favs_2026')||'[]');if(!Array.isArray(favorites))favorites=[]}catch(e){favorites=[]}
+  const $=sel=>document.querySelector(sel);
+  const icon=name=>`<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+  const safe=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const isFav=e=>favorites.includes(e.id);
+  const asMinutes=t=>{const [h,m]=t.split(':').map(Number);return h*60+m};
+  const duration=e=>{let n=asMinutes(e.end)-asMinutes(e.start);if(n<0)n+=1440;return n===30?'30 минут':n===60?'1 час':`${Math.floor(n/60)?Math.floor(n/60)+' ч ':''}${n%60?n%60+' мин':''}`.trim()};
+  function persist(){try{localStorage.setItem('aiesec_alumni_congress_favs_2026',JSON.stringify(favorites))}catch(e){} updateCounts()}
+  function updateCounts(){const n=favorites.length;$('#favCount').textContent=n;$('#headerCount').textContent=n}
+  function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];persist();render();if(state.modal)showModal(state.modal);toast(favorites.includes(id)?'Добавлено в мой маршрут':'Убрано из маршрута')}
+  function toast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2300)}
+  function matches(e){if(e.day!==state.day)return false;if(state.onlyFav&&!isFav(e))return false;if(state.type!=='all'&&e.type!==state.type)return false;if(state.room!=='all'&&e.room!==state.room)return false;const hay=[e.name,e.people,e.room,e.note].join(' ').toLocaleLowerCase('ru');return hay.includes(state.query)}
+  const timeLabel=e=>`${e.start} – ${e.end}`;
+  function listRow(e){const muted=e.type==='logistics';return `<div class="session-row ${muted?'is-muted':''}"><div class="time"><strong>${safe(e.start)}</strong><span>${safe(e.end)}</span></div><div class="event-card type-${e.special?'highlight':e.type}" role="button" tabindex="0" data-open="${e.id}" aria-label="Подробнее: ${safe(e.name)}, ${safe(timeLabel(e))}"><div class="event-content"><div class="event-kicker">${safe(categoryNames[e.type])}<span style="opacity:.5">/</span>${safe(duration(e))}</div><h3>${safe(e.name)}</h3>${e.people?`<p class="event-people">${safe(e.people)}</p>`:''}${e.note?`<p class="event-people">${safe(e.note)}</p>`:''}${e.room?`<div class="location-label">${icon('pin')} ${safe(e.room)}</div>`:''}</div><button class="save ${isFav(e)?'active':''}" type="button" data-fav="${e.id}" aria-label="${isFav(e)?'Убрать из избранного':'Добавить в избранное'}: ${safe(e.name)}" title="В мой маршрут">${icon('star')}</button></div></div>`}
+  function list(items){return items.length?`<div class="timeline">${items.map(listRow).join('')}</div>`:''}
+  function segment(text,items){return items.length?`<div class="segment-label">${safe(text)}</div>${list(items)}`:''}
+  function boardCard(e){const i=asMinutes(e.start),j=asMinutes(e.end);const row=(i-900)/30+1;const span=(j-i)/30;return `<button type="button" class="board-event" data-open="${e.id}" style="--room:${roomColors[e.room]||'#b2c8e2'};grid-column:${e.lane+2};grid-row:${row} / span ${span}" aria-label="${safe(timeLabel(e))}, ${safe(e.name)}, ${safe(e.room||'')}"><span class="board-type">${safe(e.start)} – ${safe(e.end)}</span><strong>${safe(e.name)}</strong>${e.people?`<span class="board-by">${safe(e.people)}</span>`:''}<span class="board-where">${safe(e.room)}</span>${isFav(e)?'<span class="board-star" aria-label="В избранном">★</span>':''}</button>`}
+  const breakBg=()=>[0,1,3,4].map(lane=>`<div class="board-rest" style="grid-column:${lane+2};grid-row:4" aria-hidden="true">Перерыв</div>`).join('') + [0,1,3,4].map(lane=>`<div class="board-rest" style="grid-column:${lane+2};grid-row:7" aria-hidden="true">Перерыв</div>`).join('');
+  function workshopBoard(ws){const labels=[['3 зал','Бизнес / карьера'],['1 зал','Люди / творчество'],['5 зал / Аквацентр','Сообщество / опыт'],['Наше лобби','Индустрии / AI'],['«Лесной» / «Парус»','Разговоры / клуб']];const times=Array.from({length:9},(_,i)=>{const t=900+i*30;return `${String(Math.floor(t/60)).padStart(2,'0')}:${String(t%60).padStart(2,'0')}`});return `<div class="board-scroll" aria-label="Сетка мастер-классов: горизонтальная прокрутка"><div class="board"><div class="board-heading"><div class="board-h-cell">ВРЕМЯ</div>${labels.map(x=>`<div class="board-h-cell">${safe(x[0])}<small>${safe(x[1])}</small></div>`).join('')}</div><div class="board-body"><div class="board-times">${times.map((t,i)=>`<div class="board-time">${t}<small>${i===8?'до 19:30':'+30 мин'}</small></div>`).join('')}</div><div class="board-lines"></div>${Array.from({length:4},(_,i)=>`<div class="board-track-line" style="left:calc(84px + (100% - 84px)*${(i+1)/5})"></div>`).join('')}${breakBg()}${ws.map(boardCard).join('')}</div></div></div><div class="board-caption">${Object.entries(roomColors).map(([name,color])=>`<span><i style="background:${color}"></i>${safe(name)}</span>`).join('')}</div>`}
+  function renderDay(){
+    document.querySelectorAll('.day-tab').forEach(t=>t.setAttribute('aria-selected',String(t.dataset.day===state.day)));
+    document.querySelectorAll('.filter-chip').forEach(t=>t.classList.toggle('active',t.dataset.type===state.type));
+    $('#onlyFav').classList.toggle('selected',state.onlyFav);$('#roomSelector').style.display=state.day==='sat'?'flex':'none';$('#roomFilter').value=state.room;
+    updateCounts();
+    const d=days[state.day], visible=events.filter(matches);
+    let output=`<div class="day-heading"><h2>${safe(d.title)} <span class="muted">/ ${safe(d.date)}</span></h2><p>${safe(d.description)}</p></div>`;
+    if(!visible.length){output+=`<div class="empty"><strong>По вашему запросу событий нет</strong>Попробуйте изменить фильтры или поиск.<div><button type="button" id="resetFilters">Сбросить фильтры</button></div></div>`;$('#dayContent').innerHTML=output;return}
+    if(state.day!=='sat'){
+      output+=`<div class="segment-label">${safe(d.intro)}</div>${list(visible)}`;
+    }else{
+      const isWS=e=>e.id.startsWith('w');
+      const morning=visible.filter(e=>!isWS(e)&&asMinutes(e.start)<900);
+      const ws=visible.filter(e=>isWS(e));
+      const evening=visible.filter(e=>!isWS(e)&&asMinutes(e.start)>=1170);
+      output+=segment('Утро и общая программа',morning);
+      if(ws.length){
+        output+=`<section id="workshop-anchor" aria-labelledby="workshop-title"><div class="workshop-head"><div><div class="eyebrow">15:00 — 19:30 / ВЫБИРАЙТЕ СВОЁ</div><h3 id="workshop-title">Мастер-классы & встречи</h3><p>Параллельные потоки. Нажмите на карточку, чтобы узнать подробности.</p></div><div class="room-key"><span class="dot" style="background:var(--lime)"></span>${ws.filter(e=>e.type==='workshop').length} мастер-классов</div></div>`;
+        const defaultView=state.query===''&&state.type==='all'&&state.room==='all'&&!state.onlyFav;
+        if(defaultView) output+=workshopBoard(ws.filter(e=>Number.isInteger(e.lane)))+`<div class="mobile-workshops">${list(ws.slice().sort((a,b)=>asMinutes(a.start)-asMinutes(b.start)||a.lane-b.lane))}</div>`;
+        else output+=list(ws.slice().sort((a,b)=>asMinutes(a.start)-asMinutes(b.start)||a.lane-b.lane));
+        output+='</section>';
+      }
+      output+=segment('Вечерняя программа',evening);
+    }
+    $('#dayContent').innerHTML=output;
+    // Move workshop-link navigation to Saturday without changing the current scroll position.
+  }
+  function render(){renderDay()}
+  function showModal(id){const e=events.find(x=>x.id===id);if(!e)return;state.modal=id;$('#modalKicker').textContent=`${days[e.day].title} · ${categoryNames[e.type]}`;$('#modalTitle').textContent=e.name;
+    $('#modalDetails').innerHTML=`<div class="dialog-detail">${icon('clock')}<span><strong>${safe(e.start)} — ${safe(e.end)}</strong> · ${safe(days[e.day].date)} · ${safe(duration(e))}</span></div>${e.room?`<div class="dialog-detail">${icon('pin')}<span>${safe(e.room)}</span></div>`:''}${e.people?`<div class="dialog-detail">${icon('person')}<span>${safe(e.people)}</span></div>`:''}${e.note?`<div class="dialog-detail">${icon('arrow')}<span>${safe(e.note)}</span></div>`:''}`;
+    $('#modalFav').textContent=isFav(e)?'★ Убрать из маршрута':'☆ В мой маршрут';$('#modalFav').dataset.id=e.id;$('#modalICS').dataset.id=e.id;$('#modal').classList.add('open');document.body.style.overflow='hidden';$('#modalClose').focus()}
+  function closeModal(){state.modal=null;$('#modal').classList.remove('open');document.body.style.overflow=''}
+  function download(name,contents,type){const blob=new Blob([contents],{type});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=name;link.style.display='none';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+  function icsEscape(s){return String(s||'').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/[,;]/g,ch=>'\\'+ch)}
+  function icsFor(items){const startDate={fri:23,sat:24,sun:25};const datetime=(ev,isEnd)=>{let day=startDate[ev.day];const val=isEnd?ev.end:ev.start;if(isEnd&&asMinutes(ev.end)<asMinutes(ev.start))day++;return `202610${String(day).padStart(2,'0')}T${val.replace(':','')}00`};const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');return ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//AIESEC Alumni Congress//Agenda//RU','CALSCALE:GREGORIAN','METHOD:PUBLISH',...items.flatMap(e=>['BEGIN:VEVENT',`UID:aiesec-alumni-congress-2026-${e.id}@agenda.local`,`DTSTAMP:${stamp}`,`DTSTART:${datetime(e,false)}`,`DTEND:${datetime(e,true)}`,`SUMMARY:${icsEscape(e.name)}`,`DESCRIPTION:${icsEscape([e.people,e.note].filter(Boolean).join(' | '))}`,...(e.room?[`LOCATION:${icsEscape(e.room)}`]:[]),'END:VEVENT']),'END:VCALENDAR',''].join('\r\n')}
+  function exportEvent(id){const e=events.find(x=>x.id===id);if(e)download(`AIESEC-Alumni-${e.id}.ics`,icsFor([e]),'text/calendar;charset=utf-8');}
+  document.addEventListener('click',e=>{
+    const fav=e.target.closest('[data-fav]');if(fav){e.preventDefault();e.stopPropagation();toggleFav(fav.dataset.fav);return}
+    const item=e.target.closest('[data-open]');if(item){showModal(item.dataset.open);return}
+    const tab=e.target.closest('[data-day]');if(tab){state.day=tab.dataset.day;state.room='all';render();return}
+    const chip=e.target.closest('[data-type]');if(chip){state.type=chip.dataset.type;render();return}
+    if(e.target.closest('#resetFilters')){state.query='';state.type='all';state.room='all';state.onlyFav=false;$('#search').value='';render()}
+  });
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&state.modal)closeModal();if((e.key==='Enter'||e.key===' ')&&e.target.matches('[data-open][role="button"]')){e.preventDefault();showModal(e.target.dataset.open)}});
+  $('#roomFilter').addEventListener('change',e=>{state.room=e.target.value;render()});
+  $('#search').addEventListener('input',e=>{state.query=e.target.value.trim().toLocaleLowerCase('ru');render()});
+  $('#onlyFav').addEventListener('click',()=>{state.onlyFav=!state.onlyFav;render()});
+  $('#topFav').addEventListener('click',()=>{state.onlyFav=true;state.type='all';state.room='all';state.query='';$('#search').value='';if(!events.some(e=>e.day===state.day&&isFav(e))){const first=events.find(isFav);if(first)state.day=first.day}render();$('#schedule').scrollIntoView({behavior:'smooth',block:'start'});if(!favorites.length)toast('Отметьте интересные события звёздочкой')});
+  $('#exportFav').addEventListener('click',()=>{const chosen=events.filter(isFav);if(!chosen.length){toast('Сначала добавьте события в избранное');return}download('AIESEC-Alumni-My-Agenda.ics',icsFor(chosen),'text/calendar;charset=utf-8');toast(`В календарь: ${chosen.length} событий`)});
+  $('#printBtn').addEventListener('click',()=>window.print());
+  $('#workshopLink').addEventListener('click',e=>{e.preventDefault();state.day='sat';state.type='all';state.room='all';state.query='';state.onlyFav=false;$('#search').value='';render();setTimeout(()=>$('#workshop-anchor')?.scrollIntoView({behavior:'smooth',block:'start'}),40)});
+  $('#modal').addEventListener('click',e=>{if(e.target===$('#modal'))closeModal()});
+  $('#modalClose').addEventListener('click',closeModal);
+  $('#modalFav').addEventListener('click',e=>toggleFav(e.currentTarget.dataset.id));
+  $('#modalICS').addEventListener('click',e=>exportEvent(e.currentTarget.dataset.id));
+  render();
+  </script>
+</body>
+</html>
